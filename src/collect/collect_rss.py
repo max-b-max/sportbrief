@@ -37,8 +37,8 @@ def main():
     for source, url in RSS_FEEDS.items():
         data = collect_feed(source, url)
         output_file = OUTPUT_DIR / f"{source}.json"
-        with open(output_file, "w") as f:
-            json.dump(data, f, indent=2)
+        with open(output_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
         print(f"[OK] {source}: {len(data['articles'])} articles")
 
 if __name__ == "__main__":
