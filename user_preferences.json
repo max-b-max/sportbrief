@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "version": "0.1",
+    "description": "Préférences utilisateur pour SportBrief"
+  },
+  "general": {
+    "country": "France",
+    "languages": ["fr"],
+    "timezone": "Europe/Paris"
+  },
+  "sports": {
+    "football": { "enabled": true },
+    "basketball": { "enabled": true },
+    "rugby": { "enabled": true },
+    "handball": { "enabled": true },
+    "tennis": { "enabled": true },
+    "formule1": { "enabled": true },
+    "biathlon": { "enabled": true },
+    "volleyball": { "enabled": true },
+    "mma": { "enabled": true }
+  }
+}
