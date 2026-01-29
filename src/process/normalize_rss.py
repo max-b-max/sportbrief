@@ -8,10 +8,10 @@ OUTPUT_FILE = Path("data/processed/normalized_rss.json")
 def normalize_article(article):
     return {
         "source": article.get("source"),
-        "title": article.get("title", ""),
-        "summary": article.get("summary", ""),
+        "title": article.get("title", "").strip(),
+        "summary": article.get("summary", "").strip(),
         "link": article.get("link"),
-        "published": article.get("published")
+        "published": article.get("published") or None
     }
 
 def main():
