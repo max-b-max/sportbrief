@@ -1,22 +1,367 @@
 {
   "metadata": {
-    "version": "0.1",
-    "description": "Préférences utilisateur pour SportBrief"
+    "version": "1.0",
+    "last_updated": "2026-01-24",
+    "description": "Préférences utilisateur pour SportBrief - personnalisation de la collecte d'actualités sportives"
   },
   "general": {
     "country": "France",
-    "languages": ["fr"],
+    "languages": [
+      "fr"
+    ],
     "timezone": "Europe/Paris"
   },
   "sports": {
-    "football": { "enabled": true },
-    "basketball": { "enabled": true },
-    "rugby": { "enabled": true },
-    "handball": { "enabled": true },
-    "tennis": { "enabled": true },
-    "formule1": { "enabled": true },
-    "biathlon": { "enabled": true },
-    "volleyball": { "enabled": true },
-    "mma": { "enabled": true }
-  }
+    "football": {
+      "enabled": true,
+      "teams": [
+        {
+          "name": "Olympique Marseille",
+          "aliases": [
+            "Marseille",
+            "OM",
+            "l'OM",
+            "Phocéens",
+            "Olympique de Marseille"
+          ],
+          "reason": "Club sélectionné"
+        },
+        {
+          "name": "Liverpool FC",
+          "aliases": [
+            "Liverpool",
+            "LFC",
+            "Reds",
+            "the Reds"
+          ],
+          "reason": "Club sélectionné"
+        }
+      ],
+      "leagues": [
+        "Ligue 1",
+        "Premier League",
+        "La Liga",
+        "Bundesliga",
+        "Serie A",
+        "Champions League",
+        "Euro",
+        "Coupe du Monde"
+      ],
+      "players": [],
+      "focus": "teams_and_competitions"
+    },
+    "basketball": {
+      "enabled": true,
+      "teams": [],
+      "leagues": [
+        "NBA"
+      ],
+      "players": "all_french",
+      "focus": "french_players_and_standings",
+      "standings": {
+        "show_top_teams": true,
+        "top_count": 5,
+        "show_both_conferences": true
+      },
+      "extraordinary_performances": {
+        "enabled": true,
+        "thresholds": {
+          "points": 40,
+          "rebounds": 20,
+          "assists": 15,
+          "triple_double": true
+        }
+      },
+      "matches_filter": {
+        "days_back": 1,
+        "description": "Afficher uniquement les matchs de la veille"
+      }
+    },
+    "rugby": {
+      "enabled": true,
+      "teams": [
+        {
+          "name": "Stade Toulousain",
+          "aliases": [
+            "Toulouse",
+            "ST",
+            "Stade"
+          ],
+          "reason": "Club sélectionné"
+        },
+        {
+          "name": "France",
+          "aliases": [
+            "XV de France",
+            "Bleus",
+            "Équipe de France"
+          ],
+          "type": "national_team"
+        }
+      ],
+      "leagues": [
+        "Top 14",
+        "Champions Cup",
+        "Six Nations",
+        "Coupe du Monde",
+        "Coupe du Monde Feminine"
+      ],
+      "focus": "french_teams_and_competitions"
+    },
+    "handball": {
+      "enabled": true,
+      "teams": [
+        {
+          "name": "France",
+          "aliases": [
+            "Bleus",
+            "Équipe de France",
+            "Experts"
+          ],
+          "type": "national_team"
+        }
+      ],
+      "leagues": [
+        "Starligue",
+        "Division 1 Women",
+        "World Championship",
+        "World Championship Women",
+        "Olympic Games"
+      ],
+      "focus": "national_team"
+    },
+    "volleyball": {
+      "enabled": true,
+      "teams": [
+        {
+          "name": "Chaumont",
+          "aliases": [
+            "CVB 52",
+            "Chaumont VB",
+            "CVB52",
+            "Chaumont Volley"
+          ],
+          "reason": "Club sélectionné"
+        },
+        {
+          "name": "France",
+          "aliases": [
+            "Bleus",
+            "Équipe de France"
+          ],
+          "type": "national_team"
+        }
+      ],
+      "leagues": [
+        "Ligue A",
+        "World Championship",
+        "World Championship Women",
+        "Olympic Games"
+      ],
+      "focus": "french_club_and_national_team"
+    },
+    "formule1": {
+      "enabled": true,
+      "teams": [],
+      "leagues": [],
+      "drivers": "all",
+      "focus": "all_drivers_and_teams"
+    },
+    "mma": {
+      "enabled": true,
+      "fighters": "all_french",
+      "organizations": [
+        "UFC"
+      ],
+      "focus": "french_fighters",
+      "leagues": [],
+      "teams": []
+    },
+    "biathlon": {
+      "enabled": true,
+      "athletes": "all_french",
+      "competitions": "all",
+      "focus": "french_athletes",
+      "leagues": [
+        "Coupe du Monde IBU",
+        "Championnats du Monde",
+        "Jeux Olympiques"
+      ],
+      "teams": []
+    },
+    "ski_alpin": {
+      "enabled": true,
+      "athletes": "all",
+      "competitions": [
+        "Coupe du Monde",
+        "Championnats du Monde",
+        "Jeux Olympiques"
+      ],
+      "disciplines": [
+        "descente",
+        "super-G",
+        "slalom",
+        "geant",
+        "combine"
+      ],
+      "focus": "french_athletes_and_major_events"
+    },
+    "tennis": {
+      "enabled": true,
+      "players": "french_top_ranked",
+      "players_filter": {
+        "include_men": true,
+        "include_women": true
+      },
+      "tournaments": [
+        "Australian Open",
+        "Roland Garros",
+        "Wimbledon",
+        "US Open",
+        "Masters 1000",
+        "WTA 1000"
+      ],
+      "tournaments_filter": {
+        "grand_slam": true,
+        "masters_1000": true,
+        "wta_1000": true
+      },
+      "focus": "major_tournaments_and_french_players",
+      "leagues": [
+        "Roland Garros",
+        "Australian Open",
+        "Wimbledon",
+        "US Open",
+        "Masters 1000",
+        "WTA 1000",
+        "ATP Finals"
+      ],
+      "teams": []
+    },
+    "pingpong": {
+      "enabled": true,
+      "players": "all_french",
+      "tournaments": "international",
+      "focus": "french_players",
+      "special_attention": [
+        "Felix Lebrun",
+        "Alexis Lebrun"
+      ],
+      "leagues": [],
+      "teams": []
+    }
+  },
+  "data_collection": {
+    "max_games_per_team": 5,
+    "max_games_per_league": 10,
+    "max_games_per_player": 5,
+    "max_events": 3,
+    "update_frequency": "daily"
+  },
+  "filters": {
+    "nationality_priority": [
+      "France",
+      "French"
+    ],
+    "exclude_youth_teams": false,
+    "include_womens_competitions": true,
+    "include_world_championships": true,
+    "include_olympics": true
+  },
+  "olympics": {
+    "enabled": true,
+    "priority": "high",
+    "next_games": {
+      "winter": {
+        "name": "Milano-Cortina 2026",
+        "date": "2026-02-06",
+        "location": "Milan/Cortina, Italie"
+      },
+      "summer": {
+        "name": "Los Angeles 2028",
+        "date": "2028-07-14",
+        "location": "Los Angeles, USA"
+      }
+    },
+    "focus": [
+      "qualifications",
+      "athletes_francais",
+      "calendrier",
+      "medals"
+    ]
+  },
+  "briefing_priorities": {
+    "global": {
+      "content_order": [
+        "resultats",
+        "classements",
+        "actualites",
+        "mercato",
+        "blessures"
+      ],
+      "style": "resultats_first",
+      "description": "Priorite aux resultats des matchs, puis classements, puis actualites"
+    },
+    "teams_priorities": {
+      "Olympique Marseille": {
+        "level": "maximum",
+        "topics": [
+          "resultats",
+          "classement",
+          "actualites"
+        ],
+        "description": "Priorité 1"
+      },
+      "Chaumont": {
+        "level": "high",
+        "topics": [
+          "resultats",
+          "classement",
+          "actualites"
+        ],
+        "description": "Priorité 2"
+      },
+      "Liverpool FC": {
+        "level": "medium",
+        "topics": [
+          "resultats"
+        ],
+        "description": "Priorité 3"
+      }
+    },
+    "default_team_priority": {
+      "level": "normal",
+      "topics": [
+        "resultats"
+      ]
+    }
+  },
+  "briefing_duration": {
+    "mode": "medium",
+    "options": {
+      "short": {
+        "duration_minutes": "2-4",
+        "word_count": "300-600"
+      },
+      "medium": {
+        "duration_minutes": "5-10",
+        "word_count": "750-1500"
+      },
+      "long": {
+        "duration_minutes": "10+",
+        "word_count": "1500-3000"
+      }
+    }
+  },
+  "llm": {
+    "provider": "gemini",
+    "model": "gemini-2.0-flash-lite",
+    "max_tokens": 4000
+  },
+  "tts": {
+    "provider": "edge-tts",
+    "voice": "fr-FR-HenriNeural",
+    "rate": "+0%"
+  },
+  "_note": "Les clés API sont dans .env (voir .env.example)"
 }
