@@ -2,3 +2,5 @@ feedparser
 requests
 biathlonresults
 python-dotenv
+python-dateutil
+google-generativeai
