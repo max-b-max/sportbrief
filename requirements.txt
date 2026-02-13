@@ -5,3 +5,4 @@ edge-tts
 python-dateutil
 google-generativeai
 python-dotenv
+streamlit
