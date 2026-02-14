@@ -1,0 +1,684 @@
+{
+  "football": {
+    "icon": "⚽",
+    "teams": [
+      {
+        "id": "olympique-marseille",
+        "name": "Olympique Marseille",
+        "aliases": ["Marseille", "OM", "l'OM", "Phocéens", "Olympique de Marseille"],
+        "league": "Ligue 1",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "liverpool",
+        "name": "Liverpool FC",
+        "aliases": ["Liverpool", "LFC", "Reds", "the Reds"],
+        "league": "Premier League",
+        "country": "GB",
+        "type": "club"
+      },
+      {
+        "id": "psg",
+        "name": "Paris Saint-Germain",
+        "aliases": ["PSG", "Paris", "Paris SG"],
+        "league": "Ligue 1",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "real-madrid",
+        "name": "Real Madrid",
+        "aliases": ["Real", "Madrid", "Merengues"],
+        "league": "La Liga",
+        "country": "ES",
+        "type": "club"
+      },
+      {
+        "id": "barcelona",
+        "name": "FC Barcelona",
+        "aliases": ["Barça", "Barcelona", "Barca", "FCB"],
+        "league": "La Liga",
+        "country": "ES",
+        "type": "club"
+      },
+      {
+        "id": "bayern-munich",
+        "name": "Bayern Munich",
+        "aliases": ["Bayern", "Munich", "FCB München"],
+        "league": "Bundesliga",
+        "country": "DE",
+        "type": "club"
+      },
+      {
+        "id": "juventus",
+        "name": "Juventus",
+        "aliases": ["Juve", "Juventus Turin", "Bianconeri"],
+        "league": "Serie A",
+        "country": "IT",
+        "type": "club"
+      },
+      {
+        "id": "chelsea",
+        "name": "Chelsea FC",
+        "aliases": ["Chelsea", "Blues", "CFC"],
+        "league": "Premier League",
+        "country": "GB",
+        "type": "club"
+      },
+      {
+        "id": "manchester-city",
+        "name": "Manchester City",
+        "aliases": ["Man City", "City", "MCFC", "Citizens"],
+        "league": "Premier League",
+        "country": "GB",
+        "type": "club"
+      },
+      {
+        "id": "manchester-united",
+        "name": "Manchester United",
+        "aliases": ["Man United", "United", "MUFC", "Red Devils"],
+        "league": "Premier League",
+        "country": "GB",
+        "type": "club"
+      },
+      {
+        "id": "france-football",
+        "name": "France",
+        "aliases": ["Bleus", "Équipe de France", "EDF", "Les Bleus"],
+        "league": "International",
+        "country": "FR",
+        "type": "national"
+      },
+      {
+        "id": "england-football",
+        "name": "Angleterre",
+        "aliases": ["England", "Three Lions"],
+        "league": "International",
+        "country": "GB",
+        "type": "national"
+      },
+      {
+        "id": "spain-football",
+        "name": "Espagne",
+        "aliases": ["Spain", "La Roja", "Espana"],
+        "league": "International",
+        "country": "ES",
+        "type": "national"
+      },
+      {
+        "id": "germany-football",
+        "name": "Allemagne",
+        "aliases": ["Germany", "Mannschaft", "Die Mannschaft"],
+        "league": "International",
+        "country": "DE",
+        "type": "national"
+      }
+    ]
+  },
+  "basketball": {
+    "icon": "🏀",
+    "teams": [
+      {
+        "id": "lakers",
+        "name": "Los Angeles Lakers",
+        "aliases": ["Lakers", "LAL", "LA Lakers"],
+        "league": "NBA",
+        "country": "US",
+        "type": "franchise"
+      },
+      {
+        "id": "celtics",
+        "name": "Boston Celtics",
+        "aliases": ["Celtics", "BOS", "Boston"],
+        "league": "NBA",
+        "country": "US",
+        "type": "franchise"
+      },
+      {
+        "id": "spurs",
+        "name": "San Antonio Spurs",
+        "aliases": ["Spurs", "SAS", "San Antonio"],
+        "league": "NBA",
+        "country": "US",
+        "type": "franchise"
+      },
+      {
+        "id": "warriors",
+        "name": "Golden State Warriors",
+        "aliases": ["Warriors", "GSW", "Golden State", "Dubs"],
+        "league": "NBA",
+        "country": "US",
+        "type": "franchise"
+      },
+      {
+        "id": "heat",
+        "name": "Miami Heat",
+        "aliases": ["Heat", "MIA", "Miami"],
+        "league": "NBA",
+        "country": "US",
+        "type": "franchise"
+      },
+      {
+        "id": "bucks",
+        "name": "Milwaukee Bucks",
+        "aliases": ["Bucks", "MIL", "Milwaukee"],
+        "league": "NBA",
+        "country": "US",
+        "type": "franchise"
+      },
+      {
+        "id": "timberwolves",
+        "name": "Minnesota Timberwolves",
+        "aliases": ["Timberwolves", "Wolves", "MIN", "Minnesota"],
+        "league": "NBA",
+        "country": "US",
+        "type": "franchise"
+      },
+      {
+        "id": "thunder",
+        "name": "Oklahoma City Thunder",
+        "aliases": ["Thunder", "OKC", "Oklahoma"],
+        "league": "NBA",
+        "country": "US",
+        "type": "franchise"
+      },
+      {
+        "id": "asvel",
+        "name": "ASVEL Lyon-Villeurbanne",
+        "aliases": ["ASVEL", "Villeurbanne", "Lyon Basket"],
+        "league": "Euroleague",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "monaco-basket",
+        "name": "AS Monaco Basket",
+        "aliases": ["Monaco Basket", "ASM Basket", "Monaco"],
+        "league": "Euroleague",
+        "country": "MC",
+        "type": "club"
+      },
+      {
+        "id": "real-madrid-basket",
+        "name": "Real Madrid Baloncesto",
+        "aliases": ["Real Madrid Basket", "Real Basket"],
+        "league": "Euroleague",
+        "country": "ES",
+        "type": "club"
+      },
+      {
+        "id": "barcelona-basket",
+        "name": "FC Barcelona Basket",
+        "aliases": ["Barça Basket", "Barcelona Basket"],
+        "league": "Euroleague",
+        "country": "ES",
+        "type": "club"
+      }
+    ]
+  },
+  "rugby": {
+    "icon": "🏉",
+    "teams": [
+      {
+        "id": "stade-toulousain",
+        "name": "Stade Toulousain",
+        "aliases": ["Toulouse", "ST", "Stade"],
+        "league": "Top 14",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "ubb",
+        "name": "Union Bordeaux-Bègles",
+        "aliases": ["UBB", "Bordeaux", "Bordeaux-Bègles"],
+        "league": "Top 14",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "racing-92",
+        "name": "Racing 92",
+        "aliases": ["Racing", "R92"],
+        "league": "Top 14",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "la-rochelle",
+        "name": "Stade Rochelais",
+        "aliases": ["La Rochelle", "Rochelais", "SR"],
+        "league": "Top 14",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "toulon",
+        "name": "RC Toulon",
+        "aliases": ["Toulon", "RCT"],
+        "league": "Top 14",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "clermont",
+        "name": "ASM Clermont Auvergne",
+        "aliases": ["Clermont", "ASM", "Jaunards"],
+        "league": "Top 14",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "france-rugby",
+        "name": "France",
+        "aliases": ["XV de France", "Bleus", "Équipe de France"],
+        "league": "International",
+        "country": "FR",
+        "type": "national"
+      },
+      {
+        "id": "ireland-rugby",
+        "name": "Irlande",
+        "aliases": ["Ireland", "Irish"],
+        "league": "International",
+        "country": "IE",
+        "type": "national"
+      },
+      {
+        "id": "england-rugby",
+        "name": "Angleterre",
+        "aliases": ["England", "English"],
+        "league": "International",
+        "country": "GB",
+        "type": "national"
+      },
+      {
+        "id": "new-zealand-rugby",
+        "name": "Nouvelle-Zélande",
+        "aliases": ["All Blacks", "New Zealand", "NZ"],
+        "league": "International",
+        "country": "NZ",
+        "type": "national"
+      },
+      {
+        "id": "south-africa-rugby",
+        "name": "Afrique du Sud",
+        "aliases": ["Springboks", "South Africa", "Boks"],
+        "league": "International",
+        "country": "ZA",
+        "type": "national"
+      }
+    ]
+  },
+  "tennis": {
+    "icon": "🎾",
+    "teams": [
+      {
+        "id": "djokovic",
+        "name": "Novak Djokovic",
+        "aliases": ["Djoko", "Nole", "Djokovic"],
+        "league": "ATP",
+        "country": "RS",
+        "type": "player"
+      },
+      {
+        "id": "sinner",
+        "name": "Jannik Sinner",
+        "aliases": ["Sinner"],
+        "league": "ATP",
+        "country": "IT",
+        "type": "player"
+      },
+      {
+        "id": "alcaraz",
+        "name": "Carlos Alcaraz",
+        "aliases": ["Alcaraz", "Carlitos"],
+        "league": "ATP",
+        "country": "ES",
+        "type": "player"
+      },
+      {
+        "id": "medvedev",
+        "name": "Daniil Medvedev",
+        "aliases": ["Medvedev"],
+        "league": "ATP",
+        "country": "RU",
+        "type": "player"
+      },
+      {
+        "id": "zverev",
+        "name": "Alexander Zverev",
+        "aliases": ["Zverev", "Sascha"],
+        "league": "ATP",
+        "country": "DE",
+        "type": "player"
+      },
+      {
+        "id": "swiatek",
+        "name": "Iga Swiatek",
+        "aliases": ["Swiatek", "Iga"],
+        "league": "WTA",
+        "country": "PL",
+        "type": "player"
+      },
+      {
+        "id": "sabalenka",
+        "name": "Aryna Sabalenka",
+        "aliases": ["Sabalenka"],
+        "league": "WTA",
+        "country": "BY",
+        "type": "player"
+      },
+      {
+        "id": "gauff",
+        "name": "Coco Gauff",
+        "aliases": ["Gauff", "Coco"],
+        "league": "WTA",
+        "country": "US",
+        "type": "player"
+      }
+    ]
+  },
+  "formule1": {
+    "icon": "🏎️",
+    "teams": [
+      {
+        "id": "verstappen",
+        "name": "Max Verstappen",
+        "aliases": ["Verstappen", "Max", "Super Max"],
+        "league": "F1",
+        "country": "NL",
+        "type": "driver"
+      },
+      {
+        "id": "hamilton",
+        "name": "Lewis Hamilton",
+        "aliases": ["Hamilton", "Lewis"],
+        "league": "F1",
+        "country": "GB",
+        "type": "driver"
+      },
+      {
+        "id": "leclerc",
+        "name": "Charles Leclerc",
+        "aliases": ["Leclerc", "Charles"],
+        "league": "F1",
+        "country": "MC",
+        "type": "driver"
+      },
+      {
+        "id": "norris",
+        "name": "Lando Norris",
+        "aliases": ["Norris", "Lando"],
+        "league": "F1",
+        "country": "GB",
+        "type": "driver"
+      },
+      {
+        "id": "red-bull",
+        "name": "Red Bull Racing",
+        "aliases": ["Red Bull", "RBR"],
+        "league": "F1",
+        "country": "AT",
+        "type": "team"
+      },
+      {
+        "id": "ferrari",
+        "name": "Scuderia Ferrari",
+        "aliases": ["Ferrari", "Scuderia"],
+        "league": "F1",
+        "country": "IT",
+        "type": "team"
+      },
+      {
+        "id": "mercedes",
+        "name": "Mercedes AMG",
+        "aliases": ["Mercedes", "Merc"],
+        "league": "F1",
+        "country": "DE",
+        "type": "team"
+      },
+      {
+        "id": "mclaren",
+        "name": "McLaren F1",
+        "aliases": ["McLaren"],
+        "league": "F1",
+        "country": "GB",
+        "type": "team"
+      }
+    ]
+  },
+  "handball": {
+    "icon": "🤾",
+    "teams": [
+      {
+        "id": "psg-handball",
+        "name": "PSG Handball",
+        "aliases": ["PSG Hand", "Paris Handball"],
+        "league": "Starligue",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "montpellier-handball",
+        "name": "Montpellier HB",
+        "aliases": ["Montpellier", "MHB"],
+        "league": "Starligue",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "nantes-handball",
+        "name": "HBC Nantes",
+        "aliases": ["Nantes", "H"],
+        "league": "Starligue",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "france-handball",
+        "name": "France",
+        "aliases": ["Bleus", "Équipe de France", "Experts"],
+        "league": "International",
+        "country": "FR",
+        "type": "national"
+      },
+      {
+        "id": "denmark-handball",
+        "name": "Danemark",
+        "aliases": ["Denmark", "Danois"],
+        "league": "International",
+        "country": "DK",
+        "type": "national"
+      },
+      {
+        "id": "germany-handball",
+        "name": "Allemagne",
+        "aliases": ["Germany"],
+        "league": "International",
+        "country": "DE",
+        "type": "national"
+      }
+    ]
+  },
+  "volleyball": {
+    "icon": "🏐",
+    "teams": [
+      {
+        "id": "chaumont-volley",
+        "name": "Chaumont",
+        "aliases": ["CVB 52", "Chaumont VB", "CVB52", "Chaumont Volley"],
+        "league": "Ligue A",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "paris-volley",
+        "name": "Paris Volley",
+        "aliases": ["Paris"],
+        "league": "Ligue A",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "tours-volley",
+        "name": "Tours VB",
+        "aliases": ["Tours"],
+        "league": "Ligue A",
+        "country": "FR",
+        "type": "club"
+      },
+      {
+        "id": "france-volley",
+        "name": "France",
+        "aliases": ["Bleus", "Équipe de France"],
+        "league": "International",
+        "country": "FR",
+        "type": "national"
+      },
+      {
+        "id": "italy-volley",
+        "name": "Italie",
+        "aliases": ["Italy", "Azzurri"],
+        "league": "International",
+        "country": "IT",
+        "type": "national"
+      },
+      {
+        "id": "poland-volley",
+        "name": "Pologne",
+        "aliases": ["Poland", "Polacy"],
+        "league": "International",
+        "country": "PL",
+        "type": "national"
+      }
+    ]
+  },
+  "biathlon": {
+    "icon": "🎿",
+    "teams": [
+      {
+        "id": "fillon-maillet",
+        "name": "Quentin Fillon Maillet",
+        "aliases": ["QFM", "Fillon Maillet", "Quentin"],
+        "league": "IBU",
+        "country": "FR",
+        "type": "athlete"
+      },
+      {
+        "id": "boe-johannes",
+        "name": "Johannes Boe",
+        "aliases": ["Boe", "Johannes"],
+        "league": "IBU",
+        "country": "NO",
+        "type": "athlete"
+      },
+      {
+        "id": "jacquelin",
+        "name": "Emilien Jacquelin",
+        "aliases": ["Jacquelin", "Emilien"],
+        "league": "IBU",
+        "country": "FR",
+        "type": "athlete"
+      },
+      {
+        "id": "france-biathlon",
+        "name": "France",
+        "aliases": ["Équipe de France", "Bleus"],
+        "league": "International",
+        "country": "FR",
+        "type": "national"
+      },
+      {
+        "id": "norway-biathlon",
+        "name": "Norvège",
+        "aliases": ["Norway", "Norvégiens"],
+        "league": "International",
+        "country": "NO",
+        "type": "national"
+      }
+    ]
+  },
+  "mma": {
+    "icon": "🥊",
+    "teams": [
+      {
+        "id": "gane",
+        "name": "Ciryl Gane",
+        "aliases": ["Gane", "Bon Gamin"],
+        "league": "UFC",
+        "country": "FR",
+        "type": "fighter"
+      },
+      {
+        "id": "saint-denis",
+        "name": "Benoît Saint-Denis",
+        "aliases": ["BSD", "God of War"],
+        "league": "UFC",
+        "country": "FR",
+        "type": "fighter"
+      },
+      {
+        "id": "pantoja",
+        "name": "Alexandre Pantoja",
+        "aliases": ["Pantoja"],
+        "league": "UFC",
+        "country": "BR",
+        "type": "fighter"
+      },
+      {
+        "id": "makhachev",
+        "name": "Islam Makhachev",
+        "aliases": ["Makhachev", "Islam"],
+        "league": "UFC",
+        "country": "RU",
+        "type": "fighter"
+      },
+      {
+        "id": "topuria",
+        "name": "Ilia Topuria",
+        "aliases": ["Topuria", "El Matador"],
+        "league": "UFC",
+        "country": "ES",
+        "type": "fighter"
+      }
+    ]
+  },
+  "pingpong": {
+    "icon": "🏓",
+    "teams": [
+      {
+        "id": "lebrun-alexis",
+        "name": "Alexis Lebrun",
+        "aliases": ["A. Lebrun", "Alexis"],
+        "league": "ITTF",
+        "country": "FR",
+        "type": "player"
+      },
+      {
+        "id": "lebrun-felix",
+        "name": "Félix Lebrun",
+        "aliases": ["F. Lebrun", "Félix"],
+        "league": "ITTF",
+        "country": "FR",
+        "type": "player"
+      },
+      {
+        "id": "france-pingpong",
+        "name": "France",
+        "aliases": ["Équipe de France"],
+        "league": "International",
+        "country": "FR",
+        "type": "national"
+      },
+      {
+        "id": "china-pingpong",
+        "name": "Chine",
+        "aliases": ["China", "Chinois"],
+        "league": "International",
+        "country": "CN",
+        "type": "national"
+      }
+    ]
+  }
+}
