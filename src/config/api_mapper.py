@@ -112,7 +112,7 @@ class APIMapper:
         self.resolver = get_id_resolver()
 
         # Configurer le résolveur avec la clé API
-        api_key = self.prefs.get_api_key("api_sports")
+        api_key = self.prefs.get_api_key("football_data")
         if api_key:
             self.resolver.set_api_key(api_key)
 
@@ -175,11 +175,7 @@ class APIMapper:
 
         # Mapping des sports vers leurs URLs API
         api_urls = {
-            "football": "https://v3.football.api-sports.io",
-            "basketball": "https://v1.basketball.api-sports.io",
-            "rugby": "https://v1.rugby.api-sports.io",
-            "handball": "https://v1.handball.api-sports.io",
-            "volleyball": "https://v1.volleyball.api-sports.io",
+            "football": "https://api.football-data.org/v4",
         }
 
         for team_pref in team_prefs:
@@ -232,11 +228,7 @@ class APIMapper:
 
         # Mapping des sports vers leurs URLs API
         api_urls = {
-            "football": "https://v3.football.api-sports.io",
-            "basketball": "https://v1.basketball.api-sports.io",
-            "rugby": "https://v1.rugby.api-sports.io",
-            "handball": "https://v1.handball.api-sports.io",
-            "volleyball": "https://v1.volleyball.api-sports.io",
+            "football": "https://api.football-data.org/v4",
         }
 
         for league_name in league_names:

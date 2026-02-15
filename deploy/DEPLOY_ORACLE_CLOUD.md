@@ -69,7 +69,6 @@ nano .env
 Ajouter vos clés API :
 ```
 GEMINI_API_KEY=votre_cle_gemini
-API_SPORTS_KEY=votre_cle_api_sports
 FOOTBALL_DATA_ORG_KEY=votre_cle_football_data
 ```
 
@@ -102,7 +101,7 @@ Si vous voulez déclencher manuellement depuis Streamlit :
 
 ### Logs n8n
 ```bash
-docker logs -f n8n
+sudo journalctl -u n8n -f
 ```
 
 ### Logs SportBrief
@@ -112,8 +111,7 @@ cat ~/sportbrief/data/output/debug_prompt.txt
 
 ### Redémarrer n8n
 ```bash
-cd ~/sportbrief/deploy
-docker-compose restart n8n
+sudo systemctl restart n8n
 ```
 
 ### Mettre à jour SportBrief

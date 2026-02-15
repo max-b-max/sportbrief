@@ -15,34 +15,37 @@
       "id": "cron-trigger",
       "name": "Declencheur 7h",
       "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [250, 300],
-      "notes": "Declenche le pipeline tous les jours a 7h (Europe/Paris)"
+      "typeVersion": 1.2,
+      "position": [250, 300]
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "http://host.docker.internal:5678/webhook/sportbrief-manual",
+        "httpMethod": "POST",
+        "path": "sportbrief-manual",
         "options": {}
       },
       "id": "webhook-trigger",
       "name": "Webhook Manuel",
       "type": "n8n-nodes-base.webhook",
-      "typeVersion": 1.1,
+      "typeVersion": 2,
       "position": [250, 500],
-      "webhookId": "sportbrief-manual",
-      "notes": "Permet de declencher manuellement via POST http://<IP>:5678/webhook/sportbrief-manual"
+      "webhookId": "sportbrief-manual"
     },
     {
       "parameters": {
-        "command": "cd /home/ubuntu/sportbrief && source venv/bin/activate && python sportbrief.py -a 2>&1"
+        "command": "cd /home/ubuntu/sportbrief && . venv/bin/activate && python sportbrief.py -a 2>&1"
       },
       "id": "execute-pipeline",
       "name": "Executer Pipeline",
-      "type": "n8n-nodes-base.executeCommand",
+      "type": "n8n-nodes-base.ssh",
       "typeVersion": 1,
       "position": [500, 400],
-      "notes": "Execute le script Python SportBrief avec generation audio"
+      "credentials": {
+        "sshPassword": {
+          "id": "create",
+          "name": "SSH SportBrief Local"
+        }
+      }
     },
     {
       "parameters": {
@@ -55,7 +58,7 @@
           "conditions": [
             {
               "id": "check-success",
-              "leftValue": "={{ $json.exitCode }}",
+              "leftValue": "={{ $json.code }}",
               "rightValue": 0,
               "operator": {
                 "type": "number",
@@ -102,7 +105,7 @@
       "id": "success-output",
       "name": "Succes",
       "type": "n8n-nodes-base.set",
-      "typeVersion": 3.3,
+      "typeVersion": 3.4,
       "position": [1000, 300]
     },
     {
@@ -134,19 +137,8 @@
       "id": "error-output",
       "name": "Erreur",
       "type": "n8n-nodes-base.set",
-      "typeVersion": 3.3,
+      "typeVersion": 3.4,
       "position": [1000, 500]
-    },
-    {
-      "parameters": {
-        "content": "## Briefing termine\n\n**Status**: {{ $json.status }}\n**Heure**: {{ $json.timestamp }}\n\n{{ $json.message || $json.error }}",
-        "options": {}
-      },
-      "id": "log-result",
-      "name": "Log Final",
-      "type": "n8n-nodes-base.markdown",
-      "typeVersion": 1,
-      "position": [1250, 400]
     }
   ],
   "connections": {
@@ -200,28 +192,6 @@
           }
         ]
       ]
-    },
-    "Succes": {
-      "main": [
-        [
-          {
-            "node": "Log Final",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Erreur": {
-      "main": [
-        [
-          {
-            "node": "Log Final",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
     }
   },
   "settings": {
@@ -230,14 +200,7 @@
     "timezone": "Europe/Paris"
   },
   "staticData": null,
-  "tags": [
-    {
-      "name": "sportbrief",
-      "createdAt": "2024-01-01T00:00:00.000Z",
-      "updatedAt": "2024-01-01T00:00:00.000Z"
-    }
-  ],
+  "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2024-01-01T00:00:00.000Z",
-  "versionId": "1"
+  "versionId": "4"
 }

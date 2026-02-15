@@ -8,18 +8,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# API-SPORTS (multi-sports) - depuis .env
-API_SPORTS_KEY = os.getenv("API_SPORTS_KEY", "")
+# Football-data.org
+FOOTBALL_DATA_KEY = os.getenv("FOOTBALL_DATA_ORG_KEY", "")
 
-# URLs par sport (versions différentes selon le sport)
+# URLs par sport
 API_URLS = {
-    "football": "https://v3.football.api-sports.io",
-    "basketball": "https://v1.basketball.api-sports.io",
-    "volleyball": "https://v1.volleyball.api-sports.io",
-    "handball": "https://v1.handball.api-sports.io",
-    "rugby": "https://v1.rugby.api-sports.io",
-    "formula1": "https://v1.formula-1.api-sports.io",
-    "mma": "https://v1.mma.api-sports.io",
+    "football": "https://api.football-data.org/v4",
+    "formula1": "https://api.openf1.org/v1",
 }
 
 # Configuration par sport
@@ -31,8 +26,8 @@ SPORTS_CONFIG = {
     },
 
     "football": {
-        "source": "api-football",
-        "api_key": API_SPORTS_KEY,
+        "source": "football-data",
+        "api_key": FOOTBALL_DATA_KEY,
         "teams": [
             {"name": "Olympique Marseille", "id": 119, "league_id": 61, "league_name": "Ligue 1"},
             {"name": "Liverpool FC", "id": 40, "league_id": 39, "league_name": "Premier League"},
@@ -55,8 +50,7 @@ SPORTS_CONFIG = {
     },
 
     "basketball": {
-        "source": "api-basketball",
-        "api_key": API_SPORTS_KEY,
+        "source": "nba_api",
         "french_players": [
             {"id": 985, "name": "Wembanyama Victor", "team_id": 158, "team_name": "San Antonio Spurs"},
             {"id": 815, "name": "Gobert Rudy", "team_id": 149, "team_name": "Minnesota Timberwolves"},
@@ -79,8 +73,7 @@ SPORTS_CONFIG = {
     },
 
     "volleyball": {
-        "source": "api-volleyball",
-        "api_key": API_SPORTS_KEY,
+        "source": "lnv",
         "season": 2024,  # Saison en cours
         "teams": [
             {"name": "Chaumont", "id": 470, "league_id": 63, "league_name": "Ligue A"},
@@ -97,30 +90,27 @@ SPORTS_CONFIG = {
     },
 
     "handball": {
-        "source": "api-handball",
-        "api_key": API_SPORTS_KEY,
-        "season": 2024,  # Saison en cours
+        "source": "custom",
+        "season": 2024,
         "teams": [
             {"name": "France", "id": 2662, "is_national_team": True}
         ],
         "leagues": [
-            {"name": "Starligue", "id": 34, "country": "France"},  # Championnat masculin
-            {"name": "Division 1 Women", "id": 29, "country": "France"},  # Championnat féminin
+            {"name": "Starligue", "id": 34, "country": "France"},
+            {"name": "Division 1 Women", "id": 29, "country": "France"},
             {"name": "World Championship", "id": 153, "country": "World"},
             {"name": "World Championship Women", "id": 154, "country": "World"},
             {"name": "Olympic Games", "id": 155, "country": "World"},
         ],
         "max_games_per_team": 5,
-        "max_games_per_league": 10,  # Derniers résultats par compétition
+        "max_games_per_league": 10,
     },
 
     "rugby": {
-        "source": "api-rugby",
-        "api_key": API_SPORTS_KEY,
-        "season": 2024,  # Saison en cours
+        "source": "custom",
+        "season": 2024,
         "teams": [
             {"name": "France", "id": 387, "is_national_team": True},
-            # Équipes françaises en Champions Cup
             {"name": "Stade Toulousain", "id": 107, "league_id": 54},
             {"name": "Bordeaux Begles", "id": 96, "league_id": 54},
         ],
@@ -132,43 +122,39 @@ SPORTS_CONFIG = {
             {"name": "Coupe du Monde Feminine", "id": 70, "country": "World"}
         ],
         "max_games_per_team": 5,
-        "max_games_per_league": 10,  # Derniers résultats par compétition
+        "max_games_per_league": 10,
     },
 
     "formula1": {
-        "source": "api-formula1",
-        "api_key": API_SPORTS_KEY,
+        "source": "openf1",
         "drivers": [],  # Tous les pilotes
         "max_races": 3,  # 3 dernières courses
     },
 
     "mma": {
-        "source": "api-mma",
-        "api_key": API_SPORTS_KEY,
-        "season": "2024",  # Saison pour récupérer les combats récents
+        "source": "custom",
+        "season": "2024",
         "fighters": [
-            # Combattants français majeurs UFC
-            {"name": "Ciryl Gane", "id": 545},  # Heavyweight - Top 5 UFC
-            {"name": "Nassourdine Imavov", "id": 831},  # Middleweight - Top 10 UFC
-            {"name": "Benoît Saint Denis", "id": 2466},  # Lightweight - Top 15 UFC
-            {"name": "Manon Fiorot", "id": 900},  # Women's Flyweight - Top 5 UFC
-            # Autres combattants français UFC
-            {"name": "Taylor Lapilus", "id": 2145},  # Bantamweight
-            {"name": "William Gomis", "id": 2522},  # Featherweight
-            {"name": "Farés Ziam", "id": 591},  # Lightweight
-            {"name": "Alan Baudot", "id": 857},  # Light Heavyweight
-            {"name": "Gadzhi Omargadzhiev", "id": 2490},  # Middleweight
-            {"name": "Daria Zhelezniakova", "id": 2627},  # Women's Bantamweight
-            {"name": "Stephanie Egger", "id": 858},  # Women's category
-            {"name": "Joanne Wood", "id": 18},  # Women's category
+            {"name": "Ciryl Gane", "id": 545},
+            {"name": "Nassourdine Imavov", "id": 831},
+            {"name": "Benoît Saint Denis", "id": 2466},
+            {"name": "Manon Fiorot", "id": 900},
+            {"name": "Taylor Lapilus", "id": 2145},
+            {"name": "William Gomis", "id": 2522},
+            {"name": "Farés Ziam", "id": 591},
+            {"name": "Alan Baudot", "id": 857},
+            {"name": "Gadzhi Omargadzhiev", "id": 2490},
+            {"name": "Daria Zhelezniakova", "id": 2627},
+            {"name": "Stephanie Egger", "id": 858},
+            {"name": "Joanne Wood", "id": 18},
         ],
         "organizations": ["UFC"],
         "max_fights_per_fighter": 5,
-        "max_recent_fights": 20,  # Nombre de combats récents à collecter
+        "max_recent_fights": 20,
     },
 
     "tennis": {
-        "source": "custom",  # API à déterminer
+        "source": "custom",
         "tournaments": [
             "Australian Open",
             "Roland Garros",
@@ -179,7 +165,7 @@ SPORTS_CONFIG = {
     },
 
     "pingpong": {
-        "source": "custom",  # API à déterminer
+        "source": "custom",
         "players": [
             {"name": "Felix Lebrun", "id": None},
             {"name": "Alexis Lebrun", "id": None}

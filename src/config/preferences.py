@@ -129,7 +129,7 @@ class UserPreferences:
         Récupère une clé API
 
         Args:
-            api_name: Nom de l'API (ex: "api_sports", "sportradar")
+            api_name: Nom de l'API (ex: "football_data", "sportradar")
 
         Returns:
             Clé API ou None

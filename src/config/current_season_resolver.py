@@ -252,7 +252,7 @@ if __name__ == "__main__":
 
     # Test Basketball
     api_key = get_api_key("basketball")
-    api_url = "https://v1.basketball.api-sports.io"
+    api_url = "https://api.football-data.org/v4"
 
     print("Basketball - NBA (league_id=12):")
     season = get_current_season_from_api("basketball", 12, "NBA", api_url, api_key)
@@ -260,7 +260,7 @@ if __name__ == "__main__":
 
     # Test Football
     api_key = get_api_key("football")
-    api_url = "https://v3.football.api-sports.io"
+    api_url = "https://api.football-data.org/v4"
 
     print("Football - Ligue 1 (league_id=61):")
     season = get_current_season_from_api("football", 61, "Ligue 1", api_url, api_key)
