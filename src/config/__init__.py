@@ -1,7 +1,6 @@
 """
 Package de configuration pour SportBrief
 """
-# Ancien système (legacy - à conserver pour compatibilité)
 from .api_config import (
     SPORTS_CONFIG,
     get_sport_config,
@@ -9,7 +8,6 @@ from .api_config import (
     get_api_url,
 )
 
-# Nouveau système basé sur préférences utilisateur
 from .preferences import (
     get_preferences,
     reload_preferences,
@@ -51,12 +49,10 @@ from .current_season_resolver import (
 )
 
 __all__ = [
-    # Legacy
     "SPORTS_CONFIG",
     "get_sport_config",
     "get_api_key",
     "get_api_url",
-    # Nouveau système
     "get_preferences",
     "reload_preferences",
     "UserPreferences",
