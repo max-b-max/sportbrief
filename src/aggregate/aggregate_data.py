@@ -535,6 +535,13 @@ def main():
     prefs = load_preferences()
     enabled_sports = get_enabled_sports(prefs)
 
+    # Synchroniser jeux_olympiques avec olympics.enabled
+    olympics_prefs = prefs.get("olympics", {})
+    if olympics_prefs.get("enabled") and "jeux_olympiques" not in enabled_sports:
+        enabled_sports.append("jeux_olympiques")
+    elif not olympics_prefs.get("enabled") and "jeux_olympiques" in enabled_sports:
+        enabled_sports.remove("jeux_olympiques")
+
     print(f"\n[INFO] Sports actives: {', '.join(enabled_sports)}")
 
     all_items = []
