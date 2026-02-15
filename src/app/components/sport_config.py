@@ -404,6 +404,14 @@ def render_olympics_section(current_olympics: dict) -> dict:
     if not enabled:
         return {"enabled": False}
 
+    priority_mode = st.toggle(
+        "🏅 Mode JO prioritaire — les JO deviennent le sport principal du briefing",
+        value=current_olympics.get("priority_mode", False),
+        key="olympics_priority_mode"
+    )
+    if priority_mode:
+        st.info("Les Jeux Olympiques seront traités en priorité absolue, avant tous les autres sports.")
+
     current_next = current_olympics.get("next_games", {})
 
     col1, col2 = st.columns(2)
@@ -459,7 +467,7 @@ def render_olympics_section(current_olympics: dict) -> dict:
 
     return {
         "enabled": True,
-        "priority": "high",
+        "priority_mode": priority_mode,
         "next_games": {
             "winter": {
                 "name": winter_name,

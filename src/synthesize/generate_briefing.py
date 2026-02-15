@@ -331,11 +331,20 @@ def build_system_prompt(prefs: dict) -> str:
     olympics = prefs.get("olympics", {})
     if olympics.get("enabled"):
         jo_info = get_jo_proximity_info(olympics)
+        priority_mode = olympics.get("priority_mode", False)
 
         prompt += "\n\n*** JEUX OLYMPIQUES ***\n"
 
-        # Message de contexte prioritaire si JO imminents/en cours
-        if jo_info["context_message"]:
+        # Mode prioritaire force par l'utilisateur
+        if priority_mode:
+            prompt += "!!! MODE JO PRIORITAIRE ACTIVE !!!\n"
+            prompt += "Les Jeux Olympiques sont le SUJET PRINCIPAL de ce briefing.\n"
+            prompt += "STRUCTURE OBLIGATOIRE en mode JO prioritaire:\n"
+            prompt += "1. Commence le briefing par une section JO complete et detaillee\n"
+            prompt += "2. Consacre au moins 40% du contenu total aux actualites JO\n"
+            prompt += "3. Couvre: qualifications, resultats, athletes francais engages, calendrier des epreuves\n"
+            prompt += "4. Ensuite seulement, traite les autres sports\n\n"
+        elif jo_info["context_message"]:
             prompt += f"!!! {jo_info['context_message']} !!!\n\n"
 
         # JO d'hiver
@@ -362,11 +371,12 @@ def build_system_prompt(prefs: dict) -> str:
             }.get(summer["status"], summer['date'])
             prompt += f"- JO D'ETE: {summer['name']} ({status_text}) - {summer['location']}\n"
 
-        # Instructions selon la proximite
-        prompt += "\nFocus: qualifications, preparation athletes francais, calendrier\n"
-        if jo_info["priority_event"]:
-            prompt += "PRIORITE: Mentionner les actualites JO en debut de briefing !\n"
-        prompt += "Si des infos JO sont disponibles, les mentionner selon leur importance.\n"
+        # Instructions selon la proximite (si pas en mode prioritaire force)
+        if not priority_mode:
+            prompt += "\nFocus: qualifications, preparation athletes francais, calendrier\n"
+            if jo_info["priority_event"]:
+                prompt += "PRIORITE: Mentionner les actualites JO en debut de briefing !\n"
+            prompt += "Si des infos JO sont disponibles, les mentionner selon leur importance.\n"
 
     # Rappel sur la distinction ski alpin / biathlon
     prompt += "\n\nATTENTION - DISTINCTION SPORTS:\n"

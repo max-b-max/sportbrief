@@ -549,6 +549,13 @@ def main():
     # Dedupliquer les news
     all_items = deduplicate_news(all_items)
 
+    # Mode JO prioritaire : booster tous les items jeux_olympiques à priorité 0
+    olympics_prefs = prefs.get("olympics", {})
+    if olympics_prefs.get("enabled") and olympics_prefs.get("priority_mode"):
+        for item in all_items:
+            if item.get("sport") == "jeux_olympiques":
+                item["priority"] = 0
+
     # Trier par priorite puis par type
     all_items.sort(key=lambda x: (x.get("priority", 5), x.get("type", "z")))
 
