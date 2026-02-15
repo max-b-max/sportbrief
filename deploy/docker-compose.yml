@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      # Authentification basique
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=sportbrief2024
+      # Timezone
+      - GENERIC_TIMEZONE=Europe/Paris
+      - TZ=Europe/Paris
+      # Config réseau
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+      # Execution
+      - EXECUTIONS_DATA_PRUNE=true
+      - EXECUTIONS_DATA_MAX_AGE=168
+    volumes:
+      # Données n8n persistantes
+      - ./n8n_data:/home/node/.n8n
+      # Accès au projet SportBrief (lecture seule pour sécurité)
+      - ../:/home/node/sportbrief:ro
+      # Script d'exécution (avec droits d'exécution)
+      - ../run_pipeline.sh:/home/node/run_pipeline.sh:ro
+    networks:
+      - sportbrief-network
+
+networks:
+  sportbrief-network:
+    driver: bridge
