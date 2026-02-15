@@ -26,3 +26,7 @@ data/output/
 
 # Cache
 *.cache
+*_cache.json
+
+# Local configs
+docker-compose.local.yml
