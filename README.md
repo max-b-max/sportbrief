@@ -1,40 +1,37 @@
 # SportBrief - Briefing Sportif Automatisé
-### Projet Data Engineering — Pipeline de données, synthèse LLM & automatisation
+### Projet Data Analyst — Collecte multi-sources, traitement automatisé & restitution audio
 
 ---
 
 ## Sommaire
 
-- [SportBrief - Briefing Sportif Automatisé](#sportbrief---briefing-sportif-automatisé)
-        - [Projet Data Engineering — Pipeline de données, synthèse LLM \& automatisation](#projet-data-engineering--pipeline-de-données-synthèse-llm--automatisation)
-    - [Sommaire](#sommaire)
-    - [Contexte](#contexte)
-    - [Problématique](#problématique)
-    - [Objectifs du projet](#objectifs-du-projet)
-    - [Sources de données](#sources-de-données)
-        - [Flux RSS](#flux-rss)
-        - [APIs sportives](#apis-sportives)
-    - [Technologies utilisées](#technologies-utilisées)
-        - [Langage](#langage)
-        - [Librairies Python](#librairies-python)
-        - [Intelligence Artificielle](#intelligence-artificielle)
-        - [Automatisation \& Déploiement](#automatisation--déploiement)
-        - [Environnement](#environnement)
-    - [Architecture du projet](#architecture-du-projet)
-    - [Pipeline analytique](#pipeline-analytique)
-        - [Flux global du projet](#flux-global-du-projet)
-    - [Utilisation](#utilisation)
-    - [Personnalisation](#personnalisation)
-    - [Résultats clés](#résultats-clés)
-    - [Limites du projet](#limites-du-projet)
-    - [Perspectives d'évolution](#perspectives-dévolution)
-    - [Licence](#licence)
+- [Contexte](#contexte)
+- [Problématique](#problématique)
+- [Objectifs du projet](#objectifs-du-projet)
+- [Sources de données](#sources-de-données)
+  - [Flux RSS](#flux-rss)
+  - [APIs sportives](#apis-sportives)
+- [Technologies utilisées](#technologies-utilisées)
+  - [Langage](#langage)
+  - [Librairies Python](#librairies-python)
+  - [Intelligence Artificielle](#intelligence-artificielle)
+  - [Automatisation & Déploiement](#automatisation--déploiement)
+  - [Environnement](#environnement)
+- [Architecture du projet](#architecture-du-projet)
+- [Pipeline analytique](#pipeline-analytique)
+  - [Flux global du projet](#flux-global-du-projet)
+- [Utilisation](#utilisation)
+- [Personnalisation](#personnalisation)
+- [Résultats clés](#résultats-clés)
+- [Limites du projet](#limites-du-projet)
+- [Perspectives d'évolution](#perspectives-dévolution)
+- [Licence](#licence)
 
 ---
 
 ## Contexte
 
-Ce projet a été réalisé dans le cadre d'un travail personnel en **data engineering**, avec pour objectif de concevoir un pipeline de données complet allant de la collecte automatisée à la restitution audio.
+Ce projet a été réalisé dans le cadre d'un projet personnel à la suite de ma certification **Data Analyst**, avec pour objectif de mettre en pratique les compétences acquises sur un cas concret : la collecte, le traitement et la restitution automatisée de données.
 
 Les amateurs de sport sont confrontés à une multiplication des sources d'information (sites, applications, réseaux sociaux), rendant la consommation d'actualités chronophage et fragmentée. Assimiler l'ensemble des informations pertinentes nécessite de consulter plusieurs plateformes, souvent à des moments peu adaptés comme le matin au réveil ou le soir avant de dormir.
 
