@@ -56,7 +56,9 @@ RSS_FEEDS = {
     "rmc_combat": "https://rmcsport.bfmtv.com/rss/sports-de-combat/",
     
     "rmc_JO": "https://rmcsport.bfmtv.com/rss/jeux-olympiques/",
-    
+    "lequipe_JO": "https://dwh.lequipe.fr/api/edito/rss?path=/Jo/",
+    "lemonde_JO": "https://www.lemonde.fr/jeux-olympiques/rss_full.xml",
+
     "rmc_societe": "https://rmcsport.bfmtv.com/rss/societe/",
 
     "dailysport_autres_sports": "https://www.dailysports.fr/rss/autres-sports.html"

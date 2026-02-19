@@ -69,6 +69,9 @@ Ton style:
 - Ton dynamique et enthousiaste mais professionnel
 - Phrases courtes et percutantes, adaptees a l'ecoute audio
 - Utilise des transitions fluides entre les sports
+- INTERDICTION ABSOLUE de mettre un nom d'equipe, de sport ou de section en debut de paragraphe comme un titre (ex: interdit d'ecrire "PSG :", "Football :", "NBA :", "Resultats :" etc.)
+- Le briefing est de la PROSE CONTINUE, comme une emission radio. Aucun titre, aucun sous-titre, aucune liste a puces
+- Integre les noms d'equipes naturellement dans les phrases (ex: "Du cote du PSG..." ou "En Ligue 1...")
 
 Structure du briefing:
 1. Introduction courte (date, accroche)
