@@ -57,7 +57,7 @@ SPORT_SOURCES = {
     },
     "jeux_olympiques": {
         "api": [],
-        "rss": ["rmc_JO", "lequipe_JO", "lemonde_JO"]
+        "rss": ["rmc_JO", "lemonde_JO"]
     },
     "mma": {
         "api": [],
