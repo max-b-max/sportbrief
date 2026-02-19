@@ -270,7 +270,7 @@
   },
   "olympics": {
     "enabled": true,
-    "priority": "high",
+    "priority_mode": true,
     "next_games": {
       "winter": {
         "name": "Milano-Cortina 2026",
