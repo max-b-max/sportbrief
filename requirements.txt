@@ -1,7 +1,7 @@
 feedparser
 requests
 biathlonresults
-nba_api
+nba_api>=1.11.3
 edge-tts
 python-dateutil
 google-generativeai
