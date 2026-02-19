@@ -235,8 +235,8 @@ Le fichier `user_preferences.json` permet de configurer :
 
 ## Résultats clés
 
-- Le pipeline collecte et traite en moyenne **40+ flux RSS** et **5 APIs** en moins de 2 minutes
-- Le briefing généré couvre l'ensemble des sports configurés avec une synthèse de 2 à 4 minutes en audio
+- Le pipeline collecte et traite en moyenne **40+ flux RSS** et **5 APIs** en 5 à 10 minutes (collecte séquentielle + appels LLM + génération audio)
+- Le briefing généré couvre l'ensemble des sports configurés avec une synthèse de 5 à 15 minutes en audio selon le mode choisi
 - L'automatisation quotidienne via n8n sur Oracle Cloud Free Tier assure une exécution fiable sans intervention manuelle
 - Le format audio MP3 permet une consommation d'information sans écran, répondant directement à la problématique initiale
 
