@@ -4,9 +4,21 @@ Fusionne les donnees RSS et API en un format unifie pour le LLM
 """
 
 import json
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
+
+
+def is_recent_date(date_str: str, days: int) -> bool:
+    """Retourne True si la date est dans les derniers N jours. True si date absente."""
+    if not date_str:
+        return True
+    try:
+        date_only = date_str[:10]
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d")
+        return date_only >= cutoff
+    except Exception:
+        return True
 
 
 # Configuration
@@ -377,14 +389,26 @@ def normalize_lnv_data(data: dict, prefs: dict) -> list[dict]:
     league = data.get("league", "")
 
     if data_type == "calendrier":
-        # Filtrer les matchs joues (score != 0-0 et != -)
+        # Filtrer les matchs joues (score != 0-0 et != -) des 7 derniers jours
         for match in data.get("matches", []):
             score = match.get("score", "")
             if score in ["0-0", "-", ""]:
                 continue  # Match pas encore joue
 
+            match_date = match.get("date", "")
+            if not is_recent_date(match_date, days=7):
+                continue  # Match trop ancien
+
             home = match.get("domicile", "")
             away = match.get("exterieur", "")
+
+            # Determiner le vainqueur sans ambiguite pour le LLM
+            try:
+                home_sets, away_sets = map(int, score.split("-"))
+                winner = home if home_sets > away_sets else away
+                loser = away if home_sets > away_sets else home
+            except Exception:
+                winner, loser = "", ""
 
             # Verifier si equipe favorite
             is_favorite = any(
@@ -397,11 +421,13 @@ def normalize_lnv_data(data: dict, prefs: dict) -> list[dict]:
                 "sport": "volleyball",
                 "priority": 1 if is_favorite else 2,
                 "league": league,
-                "date": match.get("date"),
+                "date": match_date,
                 "journee": match.get("journee"),
                 "home_team": home,
                 "away_team": away,
                 "score": score,
+                "winner": winner,
+                "loser": loser,
                 "sets": match.get("sets", []),
             })
 

@@ -48,10 +48,10 @@ SYSTEM_PROMPT_BASE = """Tu es un journaliste sportif francais qui presente un br
 - NE MODIFIE PAS les statistiques, recopie-les fidelement
 
 *** REGLE ABSOLUE - SCORES VOLLEYBALL ***
-- En volleyball, le score est au format "sets domicile - sets exterieur"
-- Si le resultat est "Chaumont 2-3 MHSC", cela signifie: Chaumont (domicile) a PERDU 2 sets a 3 contre MHSC
-- RECOPIE le score EXACTEMENT comme fourni, ne l'inverse JAMAIS
-- Exemple: "Chaumont 2-3 MHSC" = "Chaumont s'est incline 2-3 face a MHSC" (PAS "3-2"!)
+- Les donnees volleyball contiennent les champs "winner" et "loser" — UTILISE-LES, ils sont fiables
+- TOUJOURS formuler: "[winner] s'est impose face a [loser] [score] sets"
+- Exemple: winner="Chaumont", loser="Tours", score="3-1" → "Chaumont s'est impose face a Tours 3 sets a 1"
+- Ne JAMAIS deduire le gagnant depuis le score brut, utilise uniquement le champ winner
 
 FOCUS PRINCIPAL: LES RESULTATS DES MATCHS (UNIQUEMENT CEUX FOURNIS)
 - Ne mentionne que les scores PRESENTS dans les donnees
@@ -298,12 +298,14 @@ def build_system_prompt(prefs: dict) -> str:
     mode = duration_prefs.get("mode", "medium")
     duration_config = DURATION_CONFIG.get(mode, DURATION_CONFIG["medium"])
 
-    prompt += f"\n\n*** DUREE DU BRIEFING: {mode.upper()} - TRES IMPORTANT ***\n"
-    prompt += f"- OBJECTIF OBLIGATOIRE: {duration_config['word_target']} ({duration_config['duration']} de lecture)\n"
-    prompt += f"- Tu DOIS atteindre au minimum {duration_config['min_words']} mots\n"
+    prompt += f"\n\n*** DUREE DU BRIEFING: {mode.upper()} - CONTRAINTE ABSOLUE ***\n"
+    prompt += f"- MINIMUM OBLIGATOIRE: {duration_config['min_words']} mots. En dessous = ECHEC.\n"
+    prompt += f"- OBJECTIF: {duration_config['word_target']} ({duration_config['duration']} de lecture audio)\n"
     prompt += f"- Style: {duration_config['style']}\n"
     prompt += f"- Instructions: {duration_config['details']}\n"
-    prompt += f"- NE PAS faire un briefing trop court. Developpe chaque section.\n"
+    prompt += f"- SI tu as peu de donnees sur un sport, developpe le CONTEXTE et les ENJEUX\n"
+    prompt += f"- CHAQUE sport actif merite au minimum un paragraphe de 5 phrases\n"
+    prompt += f"- Un briefing de 4 minutes est TROP COURT pour le mode {mode.upper()}. Vise {duration_config['duration']}.\n"
 
     # Ajouter les priorites par equipe
     priorities = prefs.get("briefing_priorities", {})
